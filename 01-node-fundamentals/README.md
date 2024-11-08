@@ -1,46 +1,20 @@
-# Node
+# NodeJS
 
-- All entries and outs are streams
+#### Query Parameters
 
-```js
-import { Readable, Writable, Transform } from "node:stream";
+URL Stateful => Filters, pagination, non mandatory fields
 
-class OneToHundredStream extends Readable {
-  index = 1;
-  _read() {
-    const i = this.index++;
+https://localhost:3333/users?userId=1&name=John
 
-    setTimeout(() => {
-      if (i > 100) {
-        // empty
-        this.push(null);
-      } else {
-        const buf = Buffer.from(String(i));
-        this.push(buf);
-      }
-    }, 1000);
-  }
-}
+#### Route Parameters
 
-class InverseNumberStream extends Transform {
-  _transform(chunk, encoding, callback) {
-    const transformed = Number(chunk.toString()) * -1;
-    callback(null, Buffer.from(String(transformed)));
-  }
-}
+Identify resource
 
-class MultiplyByTenStream extends Writable {
-  _write(chunk, encoding, callback) {
-    console.log(chunk.toString() * 10);
-    callback();
-  }
-}
+GET https://localhost:3333/users/1
+DELETE https://localhost:3333/users/1
 
-new OneToHundredStream()
-  .pipe(new InverseNumberStream())
-  .pipe(new MultiplyByTenStream());
-```
+#### Request Body
 
-## Tools
+Form data
 
--[HTTPie](https://httpie.io/)
+POST https://localhost:3333/users
