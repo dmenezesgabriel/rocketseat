@@ -1,4 +1,4 @@
-# Api Rest Fastify
+# NodeJS Rest Api (Fastify)
 
 ## Setup
 
@@ -62,3 +62,9 @@ export default [
   "[html]": { "editor.formatOnSave": true }
 }
 ```
+
+## Database
+
+## Query Builders
+
+- KnexJS
