@@ -6,7 +6,7 @@
 npm init -y && \
 npm i -D typescript @types/node tsx && \
 npx tsc --init && \  # Init typescript config
-npm i fastify && \
+npm i fastify dotenv knex zod && \
 mkdir src && \
 touch src/server.ts
 ```
@@ -65,6 +65,14 @@ export default [
 
 ## Database
 
-## Query Builders
+### KnexJS
 
-- KnexJS
+_Query Builder_
+
+```sh
+npm run knex -- migrate:make create-transactions
+```
+
+```sh
+npm run knex -- migrate:latest
+```
