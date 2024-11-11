@@ -4,7 +4,7 @@
 
 ```sh
 npm init -y && \
-npm i -D typescript @types/node tsx vitest supertest @types/supertest && \
+npm i -D typescript @types/node tsx vitest supertest @types/supertest tsup sqlite && \
 npx tsc --init && \  # Init typescript config
 npm i fastify @fastify/cookie dotenv knex zod && \
 mkdir src && \
@@ -32,7 +32,8 @@ npm init @eslint/config@latest
 {
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "dev": "vitest"
+    "dev": "vitest",
+    "build": "tsup src"
   }
 }
 ```
