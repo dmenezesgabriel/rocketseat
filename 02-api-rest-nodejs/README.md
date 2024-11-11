@@ -6,7 +6,7 @@
 npm init -y && \
 npm i -D typescript @types/node tsx && \
 npx tsc --init && \  # Init typescript config
-npm i fastify dotenv knex zod && \
+npm i fastify @fastify/cookie dotenv knex zod && \
 mkdir src && \
 touch src/server.ts
 ```
