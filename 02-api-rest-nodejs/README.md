@@ -81,6 +81,8 @@ npm run knex -- migrate:latest
 
 ## Functional Requirements
 
+_System characteristics_
+
 - [x] An user must be able to create a new transaction;
 - [x] An user must be able to obtain a summary of his account;
 - [x] An user must be able to list all past transactions;
