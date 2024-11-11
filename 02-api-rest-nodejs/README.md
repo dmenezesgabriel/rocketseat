@@ -81,14 +81,14 @@ npm run knex -- migrate:latest
 
 ## Functional Requirements
 
-- [ ] An user must be able to create a new transaction;
-- [ ] An user must be able to obtain a summary of his account;
-- [ ] An user must be able to list all past transactions;
-- [ ] An user must be able to query a transaction;
+- [x] An user must be able to create a new transaction;
+- [x] An user must be able to obtain a summary of his account;
+- [x] An user must be able to list all past transactions;
+- [x] An user must be able to query a transaction;
 
 ## Business Rules
 
-- [ ] The transaction may be of kind credit which will sum to total amount, or debit to subtract from total amount;
+- [x] The transaction may be of kind credit which will sum to total amount, or debit to subtract from total amount;
 - [ ] It must be possible to identify the user from each request;
 - [ ] The user can only see transactions created by himself;
 
