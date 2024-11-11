@@ -4,7 +4,7 @@
 
 ```sh
 npm init -y && \
-npm i -D typescript @types/node tsx vitest supertest @types/supertest tsup sqlite && \
+npm i -D typescript @types/node tsx vitest @vitest/coverage-v8 supertest @types/supertest tsup sqlite && \
 npx tsc --init && \  # Init typescript config
 npm i fastify @fastify/cookie dotenv knex zod && \
 mkdir src && \
