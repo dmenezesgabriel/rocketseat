@@ -3,7 +3,6 @@ import { z } from "zod";
 
 if (process.env.NODE_ENV === "test") {
   config({ path: ".env.test", override: true });
-  console.log(process.env.DATABASE_URL);
 } else {
   config();
 }
