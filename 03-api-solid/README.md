@@ -38,7 +38,7 @@ Gympass style app.
 ```sh
 npm init -y && \
 echo "save-exact=true" >> .npmrc && \
-npm i -D typescript @types/node tsx vitest @vitest/coverage-v8 supertest @types/supertest tsup prisma && \
+npm i -D typescript @types/node tsx vitest vite-tsconfig-paths @vitest/coverage-v8 supertest @types/supertest tsup prisma && \
 npx tsc --init && \  # Init typescript config
 npm i fastify dotenv zod knex @prisma/client && \
 mkdir src && \
@@ -112,3 +112,7 @@ npx prisma migrate deploy
 ```sh
 npx prisma studio
 ```
+
+## Resources
+
+- [In Memory Database Pattern](https://martinfowler.com/bliki/InMemoryTestDatabase.html)
