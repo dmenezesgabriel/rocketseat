@@ -2,7 +2,9 @@
 
 Gympass style app.
 
-## RFs (Requisitos funcionais)
+## Features
+
+### RFs (Requisitos funcionais)
 
 - [ ] Deve ser possível se cadastrar;
 - [ ] Deve ser possível se autenticar;
@@ -15,7 +17,7 @@ Gympass style app.
 - [ ] Deve ser possível validar o check-in de um usuário;
 - [ ] Deve ser possível cadastrar uma academia;
 
-## RNs (Regras de negócio)
+### RNs (Regras de negócio)
 
 - [ ] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [ ] O usuário não pode fazer 2 check-ins no mesmo dia;
@@ -24,9 +26,89 @@ Gympass style app.
 - [ ] O check-in só pode ser validado por administradores;
 - [ ] A academia só pode ser cadastrada por administradores;
 
-## RNFs (Requisitos não-funcionais)
+### RNFs (Requisitos não-funcionais)
 
 - [ ] A senha do usuário precisa estar criptografada;
 - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [ ] Todas listas de dados precisam estar paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token);
+
+## Setup
+
+```sh
+npm init -y && \
+echo "save-exact=true" >> .npmrc && \
+npm i -D typescript @types/node tsx vitest @vitest/coverage-v8 supertest @types/supertest tsup prisma && \
+npx tsc --init && \  # Init typescript config
+npm i fastify dotenv zod knex @prisma/client && \
+mkdir src && \
+touch src/server.ts && \
+touch src/app.ts && \
+npm install --save-dev --save-exact prettier && \
+npm install --save-dev eslint-config-prettier && \
+node --eval "fs.writeFileSync('.prettierrc','{}\n')" && \
+node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')" && \
+npm init @eslint/config@latest
+```
+
+```json
+// tsconfig.json
+{ "target": "es2020" }
+
+
+// set target to es2020
+```
+
+```json
+// package.json
+{
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src",
+    "test": "vitest",
+    "test:ci": "vitest run --coverage"
+  }
+}
+```
+
+```json
+// eslint.config.mjs
+import eslintConfigPrettier from "eslint-config-prettier";
+
+export default [
+  // Other configuration
+  eslintConfigPrettier,
+];
+```
+
+### Prisma
+
+- **Generate config**:
+
+```sh
+npx prisma init
+```
+
+- **Generate types**:
+
+```sh
+npx prisma generate
+```
+
+- **Generate a migration**:
+
+```sh
+npx prisma migrate dev
+```
+
+- **Apply migrations**:
+
+```sh
+npx prisma migrate deploy
+```
+
+- **Open studio ui**:
+
+```sh
+npx prisma studio
+```
