@@ -1,8 +1,11 @@
+# CTRL + ALT + R to execute a request (extension: humao.rest-client)
+
+### Create User
 POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "John Smith",
-  "email": "john.smith@example.com",
+  "name": "John john",
+  "email": "john.John@example.com",
   "password": "123456"
 }
