@@ -116,3 +116,4 @@ npx prisma studio
 ## Resources
 
 - [In Memory Database Pattern](https://martinfowler.com/bliki/InMemoryTestDatabase.html)
+- [rest-client](https://renatogroffe.medium.com/dicas-de-visual-studio-code-testando-apis-rest-via-scripts-pt-14-7d52c7b4b8af)

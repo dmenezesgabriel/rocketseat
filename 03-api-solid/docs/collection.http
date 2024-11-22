@@ -1,11 +1,28 @@
 # CTRL + ALT + R to execute a request (extension: humao.rest-client)
 
+### Variables
+@apiurl = http://localhost:3333
+@name = "jack jack"
+@email = "john.jack@example.com"
+@password = "123456"
+
 ### Create User
-POST http://localhost:3333/users
+# @name create-user
+POST {{apiurl}}/users HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "jack jack",
-  "email": "jack.jack@example.com",
-  "password": "123456"
+  "name": {{name}},
+  "email": {{email}},
+  "password": {{password}}
+}
+
+### Authenticate User
+# @name authenticate
+POST {{apiurl}}/sessions HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": {{email}},
+  "password": {{password}}
 }
