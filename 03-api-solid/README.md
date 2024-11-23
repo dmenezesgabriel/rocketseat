@@ -83,6 +83,13 @@ export default [
 
 ### Prisma
 
+#### Concepts
+
+- <ModelName>UncheckedCreateInput: Pass related entities IDs upon model creation
+- <ModelName>CreateInput: Create also related entities upon model creation
+
+#### Commands
+
 - **Generate config**:
 
 ```sh

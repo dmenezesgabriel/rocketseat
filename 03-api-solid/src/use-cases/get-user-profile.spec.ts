@@ -24,8 +24,8 @@ describe("Get User Profile Use Case", () => {
       userId: createdUser.id,
     });
 
-    expect(user.id).toEqual(expect.any(String));
-    expect(user.name).toEqual("John Doe");
+    await expect(user.id).toEqual(expect.any(String));
+    await expect(user.name).toEqual("John Doe");
   });
 
   it("should not be able to authenticate with wrong email", async () => {
