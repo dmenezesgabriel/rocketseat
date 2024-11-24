@@ -25,7 +25,7 @@ describe("Check-In Use Case", () => {
       longitude: 0,
     });
 
-    vi.isFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
