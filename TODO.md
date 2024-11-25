@@ -4,4 +4,6 @@
 - [ ] Criando SaaS com Next.js e RBAC - Node e React
 - [ ] NLW #17 Pocket - Intermediário
 - [ ] Clean Code - React e Node
+- [ ] NLW #16 Journey React
+- [ ] NLW #16 Journey Node
 - [ ] Formação ReactJS
