@@ -26,3 +26,11 @@ Content-Type: application/json
   "email": {{email}},
   "password": {{password}}
 }
+
+### Profile
+@token = {{authenticate.response.body.$.token}}
+# @name Profile
+GET {{apiurl}}/me HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
