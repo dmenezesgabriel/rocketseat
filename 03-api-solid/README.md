@@ -38,7 +38,7 @@ Gympass style app.
 ```sh
 npm init -y && \
 echo "save-exact=true" >> .npmrc && \
-npm i -D typescript @types/node tsx vitest @vitest/ui vite-tsconfig-paths @vitest/coverage-v8 supertest @types/supertest tsup prisma && \
+npm i -D typescript @types/node tsx vitest @vitest/ui vite-tsconfig-paths @vitest/coverage-v8 supertest @types/supertest tsup prisma supertest @types/supertest && \
 npx tsc --init && \  # Init typescript config
 npm i fastify dotenv zod knex @prisma/client && \
 mkdir src && \
@@ -118,6 +118,16 @@ npx prisma migrate deploy
 
 ```sh
 npx prisma studio
+```
+
+## Tests
+
+```sh
+cd prisma/vitest-environments-prisma && \
+npm link && \
+cd ../../ && \
+# on Root Dir
+npm link vitest-environments-prisma
 ```
 
 ## Resources
