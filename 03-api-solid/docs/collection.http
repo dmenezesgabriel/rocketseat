@@ -2,8 +2,8 @@
 
 ### Variables
 @apiurl = http://localhost:3333
-@name = "jack jack"
-@email = "john.jack@example.com"
+@name = "admin1"
+@email = "jack.jack@example.com"
 @password = "123456"
 
 ### Create User
@@ -27,16 +27,33 @@ Content-Type: application/json
   "password": {{password}}
 }
 
+
 ### Profile
 @token = {{authenticate.response.body.$.token}}
-@cookies = {{authenticate.response.headers.Set-Cookie}}
 # @name profile
 GET {{apiurl}}/me HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
-Cookie: {{cookies}}
+
 
 ### Refresh Token
-# @name RefreshToken
+@cookies = {{authenticate.response.headers.Set-Cookie}}
+# @name refresh-token
 PATCH  {{apiurl}}/token/refresh HTTP/1.1
 Cookie: {{cookies}}
+
+
+### Create Gym
+@cookies = {{authenticate.response.headers.Set-Cookie}}
+# @name create-gym
+POST {{apiurl}}/gyms HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "GO Gym",
+  "description": "Some description",
+  "phone": "11999999999",
+  "latitude": -27.2092052,
+  "longitude": -49.6401091
+}
