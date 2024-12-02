@@ -29,7 +29,14 @@ Content-Type: application/json
 
 ### Profile
 @token = {{authenticate.response.body.$.token}}
-# @name Profile
+@cookies = {{authenticate.response.headers.Set-Cookie}}
+# @name profile
 GET {{apiurl}}/me HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
+Cookie: {{cookies}}
+
+### Refresh Token
+# @name RefreshToken
+PATCH  {{apiurl}}/token/refresh HTTP/1.1
+Cookie: {{cookies}}

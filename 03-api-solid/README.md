@@ -40,7 +40,7 @@ npm init -y && \
 echo "save-exact=true" >> .npmrc && \
 npm i -D typescript @types/node tsx vitest @vitest/ui vite-tsconfig-paths @vitest/coverage-v8 supertest @types/supertest tsup prisma supertest @types/supertest && \
 npx tsc --init && \  # Init typescript config
-npm i fastify dotenv zod knex @prisma/client && \
+npm i fastify @fastify/jwt @fastify/cookie dotenv zod knex @prisma/client && \
 mkdir src && \
 touch src/server.ts && \
 touch src/app.ts && \
